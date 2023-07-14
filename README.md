@@ -9,14 +9,13 @@
 - Create a branch with your name – for example(gurupriyi)
 
 ## Assessment - Task1
-- From the base container file – Build a flask container as a Docker image
+- Build a flask/nginx container as a Docker image
 - The docker image should service on port 8080
 - The front page should display the following –
   “”” Hello! Welcome to CWiCS – BOOST 3.0 Program
      This is the landing page for the Introduction to Docker and Kubernetes Session
       Page built by Gurupriy Inamdar
   “””
-- Modify the code accordingly in the base template
 - Create a Dockerfile to build this container
 - Push this container to DockerHub 
 
