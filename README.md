@@ -12,9 +12,11 @@
 - Build a flask/nginx container as a Docker image
 - The docker image should service on port 8080
 - The front page should display the following –
-  “”” Hello! Welcome to CWiCS – BOOST 3.0 Program
-     This is the landing page for the Introduction to Docker and Kubernetes Session
-      Page built by Gurupriy Inamdar
+
+  “””
+  Hello! Welcome to CWiCS – BOOST 3.0 Program\n
+  This is the landing page for the Introduction to Docker and Kubernetes Session\n
+  Page built by Gurupriy Inamdar
   “””
 - Create a Dockerfile to build this container
 - Push this container to DockerHub 
