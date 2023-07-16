@@ -17,7 +17,7 @@ The screenshots of the Docker container on the Docker Hub
 
 The Link to the Docker Image Repository: 
 
-<a href="https://hub.docker.com/r/your-dockerhub-username/repository-name">
-  <img src="https://cdn-icons-png.flaticon.com/512/919/919853.png" alt="Repository Link">
+<a href="https://hub.docker.com/repository/docker/developernamya/flask-nginx-docker/general">
+  <img src="https://cdn-icons-png.flaticon.com/512/919/919853.png" width=50 height=50 alt="Repository Link">
 </a>
-<https://hub.docker.com/repository/docker/developernamya/flask-nginx-docker/general>
+
