@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: first-deploy
+  labels:
+    name: firstdeploy
+spec:
+  selector:
+    matchLabels:
+      app: web
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: web
+    spec:
+      containers:
+      - name: master-pod
+        image: jokesta/m_nginx
+        
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx
+spec:
+  type: NodePort
+  ports:
+    - port: 35000
+      targetPort: 80
+      protocol: TCP
+  selector:
+    app: web-pod
