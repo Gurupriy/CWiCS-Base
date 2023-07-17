@@ -1,4 +1,3 @@
-# Screenshots
 
 # Task 1
 The screenshots of the commands which were input in the command line of the Windows terminal are:
@@ -25,3 +24,5 @@ The Link to the Docker Image Repository:
 
 
 # Task 2
+<img src="https://github.com/Namya13Jain/CWiCS-Base/assets/100767035/d3918366-7afa-483c-9dc6-7589e21af3af" alt="task 2">
+
