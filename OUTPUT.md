@@ -1,4 +1,6 @@
 # Screenshots
+
+# Task 1
 The screenshots of the commands which were input in the command line of the Windows terminal are:
 
 <img src="https://github.com/Namya13Jain/CWiCS-Base/assets/100767035/a36d945a-5f30-4582-9324-b7e88728c20b" alt="CMD 1">
@@ -21,3 +23,5 @@ The Link to the Docker Image Repository:
   <img src="https://cdn-icons-png.flaticon.com/512/919/919853.png" width=50 height=50 alt="Repository Link">
 </a>
 
+
+# Task 2
