@@ -19,6 +19,7 @@
 
 
 ### Output Screenshot
+![8080](https://github.com/BharathBR1/CWiCS-Base/assets/118272318/d23c5a3a-e42b-49b9-9c7c-f8d91f758949)
 
 
 ## Task 2 - Kubernetes 
@@ -47,3 +48,6 @@ After deployment To get the ip address
 minikube ip
 ```
 ### Output Screenshot
+![WhatsApp Image 2023-07-18 at 21 35 48](https://github.com/BharathBR1/CWiCS-Base/assets/118272318/6845bc37-7c5a-4891-8c4e-4367205fbd08)
+#
+![35000](https://github.com/BharathBR1/CWiCS-Base/assets/118272318/57970d9a-4583-444c-8a47-77bc6c61b036)
