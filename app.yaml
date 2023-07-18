@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: greetings-cisco
+  labels:
+    app: greetings-cisco
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: greetings-cisco
+  template:
+    metadata:
+      labels:
+        app: greetings-cisco
+    spec:
+      containers:
+        - name: greetings-cisco
+          image: riftk/cwics-greeting
+          ports:
+            - containerPort: 8080
+          env:
+            - name: FLASK_ENV
+              value: "production"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: greetings-cisco-service
+  labels:
+    app: greetings-cisco
+spec:
+  selector:
+    app: greetings-cisco
+  ports:
+    - nodePort: 30000
+      name: http
+      protocol: TCP
+      port: 80
+      targetPort: 8080
+  type: LoadBalancer
