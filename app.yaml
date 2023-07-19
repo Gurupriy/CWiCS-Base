@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: task1
+  labels:
+    app: task1
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: task1
+  template:
+    metadata:
+      labels:
+        app: task1
+    spec:
+      containers:
+      - name: task1
+        image: jigyataneja/task1
+        ports:
+        - containerPort: 8080
+        env:
+        - name: FLASK_ENV
+          value: "production"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: task1-service
+  labels:
+    app: task1
+spec:
+  selector:
+    app: task1
+  ports:
+  - name: http
+    protocol: TCP
+    port: 35000
+    targetPort: 8080
+    nodePort: 30000
+  type: LoadBalancer
