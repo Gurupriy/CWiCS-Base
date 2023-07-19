@@ -28,5 +28,5 @@ spec:
     app: web
   ports:
     - port: 35000
-      targetPort: 35000
+      targetPort: 8080
       nodePort: 35000
