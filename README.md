@@ -18,7 +18,6 @@
   This is the landing page for the Introduction to Docker and Kubernetes Session\n
   Page built by Gurupriy Inamdar
   “””
-
 - Create a Dockerfile to build this container
 - Push this container to DockerHub 
 
