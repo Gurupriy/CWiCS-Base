@@ -1,23 +1,32 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nginx-deployment
-  labels:
-    app: web
+  name: deployment-3
+  namespace: default
 spec:
+  replicas: 3
   selector:
     matchLabels:
       app: web
-  replicas: 5
-  strategy:
-    type: RollingUpdate
   template:
     metadata:
       labels:
         app: web
     spec:
       containers:
-       —name: nginx
-          image: nginx
-          ports:
-           —containerPort: 80
+        - name: app
+          image:
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: deployment-b3-nodeport
+  namespace: sathwikakancherla
+spec:
+  type: NodePort
+  selector:
+    app: web
+  ports:
+    - port: 35000
+      targetPort: 8080
+      nodePort: 35000
