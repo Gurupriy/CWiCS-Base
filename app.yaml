@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: getting-started-app
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: getting-started-app
+  template:
+    metadata:
+      labels:
+        app: getting-started-app
+    spec:
+      containers:
+        - name: getting-started-container
+          image: mitikat/getting-started:latest
+          ports:
+            - containerPort: 8080
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: getting-started-service
+spec:
+  type: NodePort
+  ports:
+    - port: 35000
+      targetPort: 8080
+      nodePort: 35000
+  selector:
+    app: getting-started-app
