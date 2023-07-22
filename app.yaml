@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: t1
+  labels:
+    app: t1
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: t1
+  template:
+    metadata:
+      labels:
+        app: t1
+    spec:
+      containers:
+      - name: t1
+        image: asiri7/t1
+        ports:
+        - containerPort: 8080
+        env:
+        - name: FLASK_ENV
+          value: "production"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: t1-service
+  labels:
+    app: t1
+spec:
+  selector:
+    app: t1
+  ports:
+  - name: http
+    protocol: TCP
+    port: 35000
+    targetPort: 8080
+    nodePort: 30000
+  type: LoadBalancer
