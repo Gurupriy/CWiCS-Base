@@ -1,32 +1,37 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: my-flask-app-deployment
+  name: flask-app-deployment
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: my-flask-app
+      app: flask-app
   template:
     metadata:
       labels:
-        app: my-flask-app
+        app: flask-app
     spec:
       containers:
-        - name: my-flask-app-container
+        - name: flask-app-container
           image: sheralwaskar/flask-app:latest
           ports:
             - containerPort: 8080
+ #     imagePullSecrets:  # If your DockerHub repository is private, provide image pull secrets here.
+  #      - name: dockerhub-secret  # Name of the secret containing your DockerHub credentials
+#      imagePullPolicy: Always   # Optional: Specify the image pull policy
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: my-flask-app-service
+  name: flask-app-service
 spec:
   selector:
-    app: my-flask-app
+    app: flask-app
   type: NodePort
   ports:
-    - port: 35000
+    - protocol: TCP
+      port: 35000
       targetPort: 8080
-      nodePort: 35000
+
+
