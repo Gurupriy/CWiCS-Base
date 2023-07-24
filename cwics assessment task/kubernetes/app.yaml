@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cwics-boost-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: cwics-boost
+  template:
+    metadata:
+      labels:
+        app: cwics-boost
+    spec:
+      containers:
+      - name: cwics-boost-container
+        image: madalpha/cwics_boost:latest
+        ports:
+        - containerPort: 8080
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: cwics-boost-service
+spec:
+  selector:
+    app: cwics-boost
+  type: NodePort
+  ports:
+    - port: 35000
+      targetPort: 8080
+      nodePort: 35000
